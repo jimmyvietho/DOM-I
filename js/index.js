@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": `DOM Is Awesome`,
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -41,84 +41,87 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-let menuItems = document.querySelectorAll('nav a');
-menuItems[0].textContent = siteContent['nav']['nav-item-1'];
-menuItems[1].textContent = siteContent['nav']['nav-item-2'];
-menuItems[2].textContent = siteContent['nav']['nav-item-3'];
-menuItems[3].textContent = siteContent['nav']['nav-item-4'];
-menuItems[4].textContent = siteContent['nav']['nav-item-5'];
-menuItems[5].textContent = siteContent['nav']['nav-item-6'];
+//Title change
+const title = document.querySelector('title')
+title.textContent = "Great Idea!"
 
+// Navigation Menu Links
+const navLinks = document.querySelectorAll("a")
 
-//prepend and append
-let menu = document.querySelector('nav');
+navLinks[0].textContent = siteContent["nav"]["nav-item-1"]
+navLinks[1].textContent = siteContent["nav"]["nav-item-2"]
+navLinks[2].textContent = siteContent["nav"]["nav-item-3"]
+navLinks[3].textContent = siteContent["nav"]["nav-item-4"]
+navLinks[4].textContent = siteContent["nav"]["nav-item-5"]
+navLinks[5].textContent = siteContent["nav"]["nav-item-6"]
+navLinks.forEach(link => link.style.color = "green")
+
+const menu = document.querySelector('nav');
 
 let lastMenuItem = document.createElement('a');
 lastMenuItem.textContent = 'Learn More';
+lastMenuItem.href = "#"
+lastMenuItem.style.color = "green"
 menu.appendChild(lastMenuItem);
 let firstMenuItem = document.createElement('a');
 firstMenuItem.textContent = 'Home';
+firstMenuItem.href = "#"
+firstMenuItem.style.color = "green"
 menu.prepend(firstMenuItem);
 
+//cta 
 
-firstMenuItem.style.color = 'green';
-lastMenuItem.style.color = 'green';
+const codeSnippetImage = document.getElementById("cta-img")
+codeSnippetImage.src = siteContent["cta"]["img-src"]
 
-
-
-//styling navbar green
-menuItems.forEach(item => item.style.color = 'green');
-
-
-
-//cta
-let ctaHeading = document.querySelector('.cta-text h1');
-ctaHeading.textContent = siteContent['cta']['h1'];
-
-let ctaButton = document.querySelector('.cta-text button');
-ctaButton.textContent = siteContent['cta']['button'];
+const mainHeader = document.querySelector('h1')
+mainHeader.textContent = siteContent["cta"]["h1"]
+const mainContainer = document.querySelector(".cta-text")
 
 
-let ctaImage = document.getElementById('cta-img');
-ctaImage.setAttribute('src', siteContent['cta']['img-src']);
+const button = document.querySelector('button')
+button.textContent = siteContent["cta"]["button"]
 
-//headings
-let topHeadings = document.querySelectorAll('.top-content .text-content h4');
-topHeadings[0].textContent = siteContent['main-content']['features-h4'];
-topHeadings[1].textContent = siteContent['main-content']['about-h4'];
 
-let topText = document.querySelectorAll('.top-content .text-content p');
-topText[0].textContent = siteContent['main-content']['features-content'];
-topText[1].textContent = siteContent['main-content']['about-content'];
+//Features 
+const featuresHeader = document.querySelector(".text-content h4")
+featuresHeader.textContent = siteContent["main-content"]["features-h4"]
 
-  // Middle Image
+const featuresPara = document.querySelector(".text-content p")
+featuresPara.textContent = siteContent["main-content"]["features-content"]
 
-let middleImage = document.getElementById('middle-img');
-middleImage.setAttribute('src', siteContent['main-content']['middle-img-src']);
+//About
+const heading = document.querySelectorAll(".text-content h4")
+heading[1].textContent = siteContent["main-content"]["about-h4"]
 
-  // Bottom Content
+const paragraph = document.querySelectorAll(".text-content p")
+paragraph[1].textContent = siteContent["main-content"]["about-content"]
 
-let bottomHeadings = document.querySelectorAll('.bottom-content .text-content h4');
-bottomHeadings[0].textContent = siteContent['main-content']['services-h4'];
-bottomHeadings[1].textContent = siteContent['main-content']['product-h4'];
-bottomHeadings[2].textContent = siteContent['main-content']['vision-h4'];
+//middle image
+const middleImage = document.getElementById("middle-img")
+middleImage.src = siteContent["main-content"]["middle-img-src"]
 
-let bottomText = document.querySelectorAll('.bottom-content .text-content p');
-bottomText[0].textContent = siteContent['main-content']['services-content'];
-bottomText[1].textContent = siteContent['main-content']['product-content'];
-bottomText[2].textContent = siteContent['main-content']['vision-content'];
+//Services
+heading[2].textContent = siteContent["main-content"]["services-h4"]
+paragraph[2].textContent = siteContent["main-content"]["services-content"]
 
-// Contact 
+//Product 
+heading[3].textContent = siteContent["main-content"]["product-h4"]
+paragraph[3].textContent = siteContent["main-content"]["product-content"]
 
-let contactHeading = document.querySelector('.contact h4');
-contactHeading.textContent = siteContent['contact']['contact-h4'];
+//Vision
+heading[4].textContent = siteContent["main-content"]["vision-h4"]
+paragraph[4].textContent = siteContent["main-content"]["vision-content"]
 
-let contactLabels = document.querySelectorAll('.contact p');
-contactLabels[0].textContent = siteContent['contact']['address'];
-contactLabels[1].textContent = siteContent['contact']['phone'];
-contactLabels[2].textContent = siteContent['contact']['email'];
+//Contact
+const contact = document.querySelector(".contact h4")
+contact.textContent = siteContent["contact"]["contact-h4"]
 
-// Footer 
+const contactP = document.querySelectorAll(".contact p")
+contactP[0].textContent = siteContent["contact"]["address"]
+contactP[1].textContent = siteContent["contact"]["phone"]
+contactP[2].textContent = siteContent["contact"]["email"]
 
-let copyright = document.querySelector('footer p');
-copyright.textContent = siteContent['footer']['copyright']; 
+//Footer
+const footer = document.querySelector("footer p")
+footer.textContent = siteContent["footer"]["copyright"]
